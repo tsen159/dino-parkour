@@ -3,7 +3,7 @@ import pygame
 class Player(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        dino_imgs = pygame.image.load("./assets/graphics/dinos/sheets/DinoSprites - tard.png").convert_alpha()
+        dino_imgs = pygame.image.load("./assets/graphics/dinos/DinoSprites - tard.png").convert_alpha()
         m = 3
         res = (72, 72)
         idle_1 = pygame.transform.scale(dino_imgs.subsurface((m, m, 24-2*m, 24-2*m)), res) # new resolution
