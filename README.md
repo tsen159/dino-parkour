@@ -27,3 +27,5 @@ python main.py
 This demo use the following assets:
 * [Pixel Platformer](https://www.kenney.nl/assets/pixel-platformer) by [Kenny](https://www.kenney.nl/)
 * [植物](https://dotown.maeda-design-room.net/category/plant/) from [DOTOWN](https://dotown.maeda-design-room.net/)
+* [Dino Characters](https://arks.itch.io/dino-characters) by [Arks](https://arks.itch.io/)
+* Music and sound effects from [Freesound](https://freesound.org/)
