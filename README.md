@@ -25,7 +25,7 @@ pip install pygame
 python main.py
 ```
 
-## Assets credit
+## Assets used
 This project uses the following assets:
 * [Pixel Platformer](https://www.kenney.nl/assets/pixel-platformer) by [Kenny](https://www.kenney.nl/)
 * [植物](https://dotown.maeda-design-room.net/category/plant/) from [DOTOWN](https://dotown.maeda-design-room.net/)
