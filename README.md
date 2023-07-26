@@ -1,6 +1,6 @@
 # Dino Parkour
 
-Dino Parkour is a simple 2D game build with pygame.
+Dino Parkour is a simple 2D game built with pygame.
 
 Player needs to make the dinosaur jump over trees and live as long as possible. Eating coins could gain extra scores.
 
