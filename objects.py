@@ -52,7 +52,7 @@ class Coin(pygame.sprite.Sprite):
         coin_1 = pygame.transform.scale(coin_1, (45, 45))
         coin_2 = pygame.transform.scale(coin_2, (45, 45))
         self.image = coin_1
-        self.rect = self.image.get_rect(midbottom=(randint(800, 1000), 120))
+        self.rect = self.image.get_rect(midbottom=(randint(800, 1000), 130))
         self.radius = 45 / 2
         self.coin_frames = [coin_1, coin_2]
         self.coin_idx = 0
