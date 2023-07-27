@@ -1,20 +1,22 @@
-from typing import Any
 import pygame
 from random import randint
 
 init_speed = 4.3
 
 class Tree(pygame.sprite.Sprite):
-    def __init__(self, add_speed):
+    def __init__(self, add_speed, add_size):
         super().__init__()
         tree_g = pygame.image.load("./assets/graphics/dotown/small_g.png").convert_alpha()
         tree_y = pygame.image.load("./assets/graphics/dotown/small_y.png").convert_alpha()
         tree_yg = pygame.image.load("./assets/graphics/dotown/small_yg.png").convert_alpha()
         size = tree_g.get_size()
         m = 65
-        tree_g = pygame.transform.scale(tree_g.subsurface(m, m, size[0]-2*m, size[1]-2*m), (40, 50))
-        tree_y = pygame.transform.scale(tree_y.subsurface(m, m, size[0]-2*m, size[1]-2*m), (40, 50))
-        tree_yg = pygame.transform.scale(tree_yg.subsurface(m, m, size[0]-2*m, size[1]-2*m), (40, 50))
+        res_list = [(40 + 5*i, 50 + 5*i) for i in range(11)]
+        res = res_list[min(add_size, 10)]
+
+        tree_g = pygame.transform.scale(tree_g.subsurface(m, m, size[0]-2*m, size[1]-2*m), res)
+        tree_y = pygame.transform.scale(tree_y.subsurface(m, m, size[0]-2*m, size[1]-2*m), res)
+        tree_yg = pygame.transform.scale(tree_yg.subsurface(m, m, size[0]-2*m, size[1]-2*m), res)
         self.tree_frames = [tree_g, tree_y, tree_yg]
 
         self.tree_idx = randint(0, 2)

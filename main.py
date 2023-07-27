@@ -48,6 +48,7 @@ bonus = 0
 best_score = 0
 add_speed = 0
 minus_time = 0
+add_size = 0
 threshold = 50
 
 while True: # to keep the game running
@@ -64,13 +65,14 @@ while True: # to keep the game running
                 bonus = 0
                 add_speed = 0
                 minus_time = 0
+                add_size = 0
                 threshold = 50
                 tree_group.empty()
                 coin_group.empty()
 
         if game_start and not game_failed:
             if event.type == tree_timer:
-                tree_group.add(Tree(add_speed))
+                tree_group.add(Tree(add_speed, add_size))
             if event.type == coin_timer:
                 coin_group.add(Coin(add_speed))
 
@@ -87,9 +89,10 @@ while True: # to keep the game running
         score = show_score(0, playing=True)
         if score > best_score:
             best_score = score
-        if score >= threshold:
+        if score >= threshold and threshold <= 500:
             add_speed = score // 100
             minus_time = score
+            add_size = score // 50
             pygame.time.set_timer(tree_timer, tree_time - minus_time)
             pygame.time.set_timer(coin_timer, coin_time - minus_time)
             threshold += 50

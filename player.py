@@ -17,13 +17,13 @@ class Player(pygame.sprite.Sprite):
         run_5 = pygame.transform.scale(dino_imgs.subsurface((192+m, m, 24-2*m, 24-2*m)), res)
         run_6 = pygame.transform.scale(dino_imgs.subsurface((216+m, m, 24-2*m, 24-2*m)), res)
 
-        self.died_img = pygame.transform.scale(dino_imgs.subsurface((336+m, m, 24-2*m, 24-2*m)), (72, 72))
+        self.died_img = pygame.transform.scale(dino_imgs.subsurface((336+m, m, 24-2*m, 24-2*m)), res)
 
         self.jump_img = pygame.transform.scale(dino_imgs.subsurface((168+m, m, 24-2*m, 24-2*m)), res)
 
         self.image = idle_1
         self.rect = self.image.get_rect(midbottom=(150, 300))
-        self.radius = 72 // 2
+        self.radius = res[0] // 2
 
         self.idle_frames = [idle_1, idle_2, idle_3]
         self.idle_idx = 0
@@ -35,11 +35,10 @@ class Player(pygame.sprite.Sprite):
         self.jump_sound = pygame.mixer.Sound("./assets/audio/jump.wav")
         self.jump_sound.set_volume(0.5)
 
-    
     def input(self):
         keys = pygame.key.get_pressed()
         if self.game_start == True and keys[pygame.K_SPACE] and self.rect.bottom >= 300:
-            self.gravity = -18
+            self.gravity = -16
             self.jump_sound.play()
 
     def idle(self):
@@ -60,7 +59,7 @@ class Player(pygame.sprite.Sprite):
         self.rect.bottom += self.gravity
         if self.rect.bottom >= 300:
             self.rect.bottom = 300
-            
+
     def update(self, game_start, game_failed):
         self.game_start = game_start
         self.game_failed = game_failed
@@ -72,4 +71,3 @@ class Player(pygame.sprite.Sprite):
             self.image = self.jump_img
         self.input()
         self.drop()
-        pass
