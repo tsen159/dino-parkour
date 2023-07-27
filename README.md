@@ -15,13 +15,13 @@ cd dino_parkour
 
 2. Create a virtualenv if needed:
 ```
-virtualenv .venv
+virtualenv -p python3.9 .venv
 source .venv/bin/activate
-pip install pygame
 ```
 
 3. After installing pygame package, the game can be run successfully!!
 ```
+pip install pygame==2.5.0
 python main.py
 ```
 
