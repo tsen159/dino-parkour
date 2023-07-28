@@ -7,6 +7,11 @@ Player needs to make the dinosaur jump over trees and live as long as possible. 
 ![image](https://github.com/tsen159/dino_parkour/blob/main/demo.gif)
 
 ## Run the game locally
+### Method 1
+1. Download the whole folder.
+2. Open dino_parkour.exe and play!
+
+### Method 2
 1. Clone the repo:
 ```
 git clone git@github.com:tsen159/dino_parkour.git
