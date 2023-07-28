@@ -8,7 +8,7 @@ Player needs to make the dinosaur jump over trees and live as long as possible. 
 
 ## Run the game locally
 ### Method 1
-1. Download the whole folder.
+1. Download dino_parkour.zip file.
 2. Open dino_parkour.exe and play!
 
 ### Method 2
