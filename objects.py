@@ -11,8 +11,7 @@ class Tree(pygame.sprite.Sprite):
         tree_yg = pygame.image.load("./assets/graphics/dotown/small_yg.png").convert_alpha()
         size = tree_g.get_size()
         m = 65
-        res_list = [(40 + 5*i, 50 + 5*i) for i in range(11)]
-        res = res_list[min(add_size, 10)]
+        res = (45 + add_size, 55 + add_size)
 
         tree_g = pygame.transform.scale(tree_g.subsurface(m, m, size[0]-2*m, size[1]-2*m), res)
         tree_y = pygame.transform.scale(tree_y.subsurface(m, m, size[0]-2*m, size[1]-2*m), res)
@@ -22,7 +21,7 @@ class Tree(pygame.sprite.Sprite):
         self.tree_idx = randint(0, 2)
         self.image = self.tree_frames[self.tree_idx]
         self.rect = self.image.get_rect(midbottom=(randint(800, 1000), 300))
-        self.radius = 40 // 2
+        self.radius = (res[0]-2) // 2
         self.game_start = False
         self.game_failed = False
         self.speed = init_speed + add_speed
@@ -38,9 +37,9 @@ class Tree(pygame.sprite.Sprite):
     def update(self, game_start, game_failed):
         self.game_start = game_start
         self.game_failed = game_failed
-        if self.game_start == True and self.game_failed == False:
+        if self.game_start and not self.game_failed:
             self.move()
-        elif self.game_failed == True:
+        elif self.game_failed:
             self.stop()
 
 class Coin(pygame.sprite.Sprite):
@@ -52,7 +51,7 @@ class Coin(pygame.sprite.Sprite):
         coin_1 = pygame.transform.scale(coin_1, (45, 45))
         coin_2 = pygame.transform.scale(coin_2, (45, 45))
         self.image = coin_1
-        self.rect = self.image.get_rect(midbottom=(randint(800, 1000), 130))
+        self.rect = self.image.get_rect(midbottom=(randint(800, 1100), 130))
         self.radius = 45 / 2
         self.coin_frames = [coin_1, coin_2]
         self.coin_idx = 0
@@ -76,7 +75,7 @@ class Coin(pygame.sprite.Sprite):
     def update(self, game_start, game_failed):
         self.game_start = game_start
         self.game_failed = game_failed
-        if self.game_start == True and self.game_failed == False:
+        if self.game_start and not self.game_failed:
             self.move()
-        elif self.game_failed == True:
+        elif self.game_failed:
             self.stop()
