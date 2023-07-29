@@ -1,7 +1,7 @@
 import pygame
 from random import randint
 
-init_speed = 4.3
+init_speed = 4.3 
 
 class Tree(pygame.sprite.Sprite):
     def __init__(self, add_speed, add_size):
@@ -11,7 +11,7 @@ class Tree(pygame.sprite.Sprite):
         tree_yg = pygame.image.load("./assets/graphics/dotown/small_yg.png").convert_alpha()
         size = tree_g.get_size()
         m = 65
-        res = (45 + add_size, 55 + add_size)
+        res = (45 +add_size, 55 +add_size)
 
         tree_g = pygame.transform.scale(tree_g.subsurface(m, m, size[0]-2*m, size[1]-2*m), res)
         tree_y = pygame.transform.scale(tree_y.subsurface(m, m, size[0]-2*m, size[1]-2*m), res)

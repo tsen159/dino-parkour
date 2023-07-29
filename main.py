@@ -104,9 +104,9 @@ while True: # to keep the game running
         if score > best_score:
             best_score = score
         if score >= threshold and threshold <= 1000:
-            add_speed = score / 500
+            add_speed = score / 800
             minus_time = 0
-            add_size = score // 10
+            add_size = score // 25 + threshold // 100
             pygame.time.set_timer(tree_timer, tree_time - minus_time)
             pygame.time.set_timer(coin_timer, coin_time - minus_time)
             threshold += 50
